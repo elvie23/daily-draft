@@ -31,10 +31,13 @@ const Forum = () => {
     fetchPosts();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
+   if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center text-4xl text-emerald-950">
+        Loading...
+      </div>
+    );
   }
-
   return (
     <div className="p-16 space-y-3">
       <p className="text-7xl font-[Oswald] font-light tracking-widest text-center mt-10">
