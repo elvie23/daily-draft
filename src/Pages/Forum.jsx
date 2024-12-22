@@ -33,7 +33,7 @@ const Forum = () => {
 
    if (loading) {
     return (
-      <div className="h-screen flex items-center justify-center text-4xl text-emerald-950">
+      <div className="h-screen flex items-center justify-center text-4xl text-emerald-950 font-[Oswald]">
         Loading...
       </div>
     );
