@@ -31,39 +31,40 @@ const Forum = () => {
     fetchPosts();
   }, []);
 
-   if (loading) {
+  if (loading) {
     return (
       <div className="h-screen flex items-center justify-center text-4xl text-emerald-950 font-[Oswald]">
         Loading...
       </div>
     );
   }
+
   return (
-    <div className="p-16 space-y-3">
-      <p className="text-7xl font-[Oswald] font-light tracking-widest text-center mt-10">
+    <div className="p-6 sm:p-12 lg:p-16 space-y-6">
+      <p className="text-4xl sm:text-5xl lg:text-7xl font-[Oswald] font-light tracking-widest text-center mt-10">
         Forum Posts
       </p>
 
-      <p className="text-2xl font-[Oswald] font-light tracking-widest text-center mt-10">
+      <p className="text-xl sm:text-2xl lg:text-2xl font-[Oswald] font-light tracking-widest text-center mt-4">
         "Dive into the discussion! Share your thoughts and ideas with the
         community."
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10 p-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-10 p-4 sm:p-8">
         {posts.map((post) => (
           <div
             key={post.id}
-            className="p-6 flex flex-col justify-between items-start border border-black rounded shadow-md"
+            className="p-6 sm:p-8 flex flex-col justify-between items-start border border-black rounded-md shadow-md"
             style={{
               height: "320px", // Ensures uniform height
               minWidth: "250px", // Optional: Adjust minimum width
             }}
           >
-            <h2 className="text-2xl font-[Poppins] font-medium text-justify uppercase mb-2">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-[Poppins] font-medium text-justify uppercase mb-2">
               {post.title}
             </h2>
             <p
-              className="text-sm text-black font-[Poppins] overflow-hidden mb-4"
+              className="text-sm sm:text-base lg:text-sm text-black font-[Poppins] overflow-hidden mb-4"
               style={{
                 display: "-webkit-box",
                 WebkitBoxOrient: "vertical",
@@ -74,12 +75,12 @@ const Forum = () => {
             >
               {post.body}
             </p>
-            <small className="text-xs text-gray-500 mb-4">
+            <small className="text-xs sm:text-sm lg:text-xs text-gray-500 mb-4">
               Tags: {post.tags.join(", ")}
             </small>
             <Link
               to={`/posts/${post.id}`}
-              className="btn2 w-full text-center"
+              className="btn2 mt-4 w-full text-center"
             >
               Read More
             </Link>
