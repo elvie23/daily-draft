@@ -44,10 +44,11 @@ function Header() {
           </p>
         </div>
 
+        {/* Join Us Button */}
         <div>
           <NavLink
             to="/Register"
-            className="btn"
+            className="btn hidden md:block"
           >
             Join Us
           </NavLink>
